@@ -1,0 +1,47 @@
+
+
+CREATE TABLE `spring_boot_jdbc`.`employees` (
+  `emp_id` INT(8) NOT NULL,
+  `emp_name` VARCHAR(30) NOT NULL,
+  `salary` INT(8) NULL,
+  `hiredate` DATE NULL,
+  `dept_id` INT(2) NULL,
+  PRIMARY KEY (`emp_id`));
+CREATE TABLE `spring_boot_jdbc`.`departments` (
+  `dept_id` INT(2) NOT NULL,
+  `dept_name` VARCHAR(30) NULL,
+  PRIMARY KEY (`dept_id`));
+CREATE TABLE `spring_boot_jdbc`.`questions` (
+  `question_id` INT NOT NULL AUTO_INCREMENT,
+  `question_sentence` VARCHAR(2000) NOT NULL,
+  `option1_value` CHAR(1) NOT NULL,
+  `option1_label` VARCHAR(400) NOT NULL,
+  `option2_value` CHAR(1) NOT NULL,
+  `option2_label` VARCHAR(400) NOT NULL,
+  `option3_value` CHAR(1) NOT NULL,
+  `option3_label` VARCHAR(400) NOT NULL,
+  `option4_value` CHAR(1) NOT NULL,
+  `option4_label` VARCHAR(400) NOT NULL,
+  PRIMARY KEY (`question_id`));
+
+CREATE TABLE `spring_boot_jdbc`.`users` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(225) NOT NULL,
+  `password` VARCHAR(225) NOT NULL,
+  `enabled` INT(1) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `spring_boot_jdbc`.`authorities` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(225) NOT NULL,
+  `authority` TEXT NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `spring_boot_jdbc`.`board` (
+  `id` INT(10) NOT NULL AUTO_INCREMENT,
+  `post_datetime` DATETIME NOT NULL,
+  `name` VARCHAR(100) NULL,
+  `email` VARCHAR(255) NULL,
+  `comment` TEXT NOT NULL,
+  PRIMARY KEY (`id`));
+
