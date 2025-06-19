@@ -45,3 +45,35 @@ CREATE TABLE `spring_boot_jdbc`.`board` (
   `comment` TEXT NOT NULL,
   PRIMARY KEY (`id`));
 
+CREATE TABLE `spring_boot_jdbc`.`departments`( `dept_id` int NOT NULL,`dept_name` varchar(30) DEFAULT NULL,PRIMARY KEY (`dept_id`);  
+
+
+-- `employees` テーブルへのデータ追加
+INSERT INTO employees (emp_id, emp_name, salary, hiredate, dept_id) VALUES
+(1, '田中 太郎', 500000, '2024-01-15', 1),
+(2, '佐藤 花子', 450000, '2023-10-01', 2),
+(3, '山田 一郎', 600000, '2022-07-20', 1);
+
+-- `departments` テーブルへのデータ追加
+INSERT INTO departments (dept_id, dept_name) VALUES
+(1, '営業部'),
+(2, '開発部');
+
+-- `questions` テーブルへのデータ追加
+INSERT INTO questions (question_sentence, option1_value, option1_label, option2_value, option2_label, option3_value, option3_label, option4_value, option4_label) VALUES
+('Javaはオブジェクト指向の言語ですか？', 'A', 'はい', 'B', 'いいえ', 'C', '分からない', 'D', 'その他');
+
+-- `users` テーブルへのデータ追加
+INSERT INTO users (username, password, enabled) VALUES
+('admin', 'password123', 1),
+('user01', 'testpass', 1);
+
+-- `authorities` テーブルへのデータ追加
+INSERT INTO authorities (username, authority) VALUES
+('admin', 'ROLE_ADMIN'),
+('user01', 'ROLE_USER');
+
+-- `board` テーブルへのデータ追加
+INSERT INTO board (post_datetime, name, email, comment) VALUES
+(NOW(), '山田 太郎', 'yamada@example.com', '初めまして！'),
+(NOW(), '佐藤 花子', 'sato@example.com', 'よろしくお願いします！');
